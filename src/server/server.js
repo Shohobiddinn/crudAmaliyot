@@ -11,7 +11,6 @@ export default async function server(
             baseURL: baseUrl + enpoint,
             method:method,
             data:data
-            
         })
         .then((res)=>{
             result  =  res
@@ -20,7 +19,7 @@ export default async function server(
             console.log(error);
         })
         .finally(()=>{
-            console.log("hello");
+            console.log(result);
         });
         return new Promise ((resolve,reject)=>{
             if(result) resolve(result);
