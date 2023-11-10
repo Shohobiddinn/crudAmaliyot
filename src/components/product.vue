@@ -3,10 +3,10 @@
     <div class="product">
       <img src="" alt="" />
       <div class="options">
-        <div class="title">lorem ipsum</div>
+        <div class="title" v-for="item in names" :key="item">lorem ipsum</div>
         <div class="title">45$</div>
         <div class="btn">click me</div>
-        <button @click="$emit('close','salom')">close</button>
+        <button @click="$emit('close')">close</button>
         <Title>
 
         </Title>
@@ -18,6 +18,7 @@
 <script>
 import Title from "@/components/Title.vue"
 export default {
+  props:['names'],
   data() {
     return {};
   },

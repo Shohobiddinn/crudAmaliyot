@@ -6,7 +6,8 @@ export default {
     return {
       product: null,
       page: 1,
-      limit: 25
+      limit: 25,
+      names: ["saman","botir"]
     };
   },
   created() {
@@ -39,7 +40,7 @@ export default {
     </router-link>
  </pre> -->
  <div>
-  <product @close="yopish">
+  <product @close="yopish" :names="names">
 
   </product>
   <input type="text" ref="input" @keyup.enter="clickMe">
