@@ -1,6 +1,6 @@
 <script>
 import api from "../server/api";
-import product from "@/src/components/product.vue";
+import product from "@/components/product.vue";
 export default {
   data() {
     return {
@@ -22,6 +22,9 @@ export default {
       this.$refs.name.textContent = this.$refs.input.value
       console.log(this.$refs.input.value);
       this.$refs.input.value = ""
+    },
+    yopish(){
+      alert("ishladi")
     }
   },
   components:{
@@ -36,8 +39,8 @@ export default {
     </router-link>
  </pre> -->
  <div>
-  <product>
-    
+  <product @close="yopish">
+
   </product>
   <input type="text" ref="input" @keyup.enter="clickMe">
   <button @click="clickMe">Click me</button>
