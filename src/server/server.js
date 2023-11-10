@@ -12,6 +12,7 @@ export default async function server(
             method:method,
             data:data
         })
+        
         .then((res)=>{
             result  =  res
         })

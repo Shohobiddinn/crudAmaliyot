@@ -5,5 +5,8 @@ export default {
     },
     productId(param) {
         return server(`${param}`, "get");
+    },
+    product_create(data) {
+        return server(`product_create`, "put", data);
     }
 }
