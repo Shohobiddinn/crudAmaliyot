@@ -7,7 +7,8 @@ export default {
       product: null,
       page: 1,
       limit: 25,
-      names: ["saman","botir"]
+      names: ["saman","botir"],
+      languages:[]
     };
   },
   created() {
@@ -43,6 +44,25 @@ export default {
   <product @close="yopish" :names="names">
 
   </product>
+  <div>
+    <div>
+      <span>english</span>
+      <input type="checkbox" v-model="languages" value="english">
+    </div>
+    <div>
+      <span>Russian</span>
+      <input type="checkbox" v-model="languages" value="russian">
+    </div>
+    <div>
+      <span>uzbek</span>
+      <input type="checkbox" v-model="languages" value="uzbek">
+    </div>
+  </div>
+  <div>
+    <ol>
+      <li v-for="lang in languages" :key="lang">{{lang}}</li>
+    </ol>
+  </div>
   <input type="text" ref="input" @keyup.enter="clickMe">
   <button @click="clickMe">Click me</button>
   <h1 ref="name">Salom Vue</h1>
