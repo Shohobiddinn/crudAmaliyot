@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>About Page</h1>
     <pre>{{ $route.params.id }}</pre>
     <pre>
     <img style="width: 100px;height: 100px;" :src="product?.image" alt="">
