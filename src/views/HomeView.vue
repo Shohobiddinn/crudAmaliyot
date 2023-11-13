@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary text-bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -45,24 +45,26 @@
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" @submit.prevent="none">
             <input
               class="form-control me-2"
-              type="search"
+              type="text"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
+            <button class="btn btn-outline-success">Search</button>
           </form>
         </div>
       </div>
     </nav>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-      data-bs-target="#exampleModal">Primary</button>
-    <!-- Modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Primary
+    </button>
     <div
       class="modal fade"
       id="exampleModal"
@@ -81,7 +83,12 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores iusto, deleniti ducimus alias, exercitationem cum mollitia praesentium adipisci saepe autem aliquid culpa ipsa. Explicabo quod cumque exercitationem deserunt praesentium in!</div>
+          <div class="modal-body">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
+            iusto, deleniti ducimus alias, exercitationem cum mollitia
+            praesentium adipisci saepe autem aliquid culpa ipsa. Explicabo quod
+            cumque exercitationem deserunt praesentium in!
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -95,6 +102,32 @@
         </div>
       </div>
     </div>
+    <button type="button" class="btn btn-primary" id="liveToastBtn" @click="btn">
+      Show live toast
+    </button>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="liveToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="..." />
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Hello, world! This is a toast message.</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -103,7 +136,12 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    btn(){
+      bootstrap.Toast.getOrCreateInstance(toastLiveExample).show();
+      alert("edbfheb")
+    }
+  },
 };
 </script>
 
@@ -113,3 +151,4 @@ export default {
   outline: none;
 }
 </style>
+
