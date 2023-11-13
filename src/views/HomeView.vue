@@ -1,17 +1,30 @@
 <template>
-  <div class="text-center">
-    <v-btn  style="border-radius: 20px;" color="red-darken-2" @click="snackbar = true"> Open Snackbar </v-btn>
+  <v-card>
+    <v-layout>
+      <v-navigation-drawer
+        expand-on-hover
+        rail
+      >
+        <v-list>
+          <v-list-item
+            prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+            title="Sandra Adams"
+            subtitle="sandra_a88@gmailcom"
+          ></v-list-item>
+        </v-list>
 
-    <v-snackbar  v-model="snackbar" multi-line max-width="200">
-      {{ text }}
+        <v-divider></v-divider>
 
-      <template v-slot:actions>
-        <v-btn color="red" variant="text" @click="snackbar = false">
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
-  </div>
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="mdi-folder" title="My Files" value="myfiles"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-multiple" title="Shared with me" value="shared"></v-list-item>
+          <v-list-item prepend-icon="mdi-star" title="Starred" value="starred"></v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
+      <v-main style="height: 250px"></v-main>
+    </v-layout>
+  </v-card>
 </template>
 
 
@@ -24,7 +37,4 @@ export default {
 };
 </script>
 <style lang="scss" >
-body {
-  background-color: black;
-}
 </style>
